@@ -5,6 +5,7 @@ import {
   decrement,
   increment,
   incrementByAmount,
+  decrementByAmount,
   incrementAsync,
   incrementIfOdd,
   selectCount,
@@ -24,7 +25,7 @@ export function Counter() {
         <button
           className={styles.button}
           aria-label="Decrement value"
-          onClick={() => dispatch(decrement())}
+          onClick={() => dispatch(decrement())} 
         >
           -
         </button>
@@ -41,14 +42,20 @@ export function Counter() {
         <input
           className={styles.textbox}
           aria-label="Set increment amount"
-          value={incrementAmount}
-          onChange={(e) => setIncrementAmount(e.target.value)}
+          value={incrementAmount}   
+          onChange={(e) => setIncrementAmount(e.target.value)}   
         />
         <button
           className={styles.button}
-          onClick={() => dispatch(incrementByAmount(incrementValue))}
+          onClick={() => dispatch(incrementByAmount(incrementValue))}   
         >
           Add Amount
+        </button>
+        <button
+          className={styles.button}
+          onClick={() => dispatch(decrementByAmount(incrementValue))}  
+        >
+          Subtract Amount
         </button>
         <button
           className={styles.asyncButton}
